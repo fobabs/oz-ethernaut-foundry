@@ -4,7 +4,6 @@ pragma solidity ^0.8.26;
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 import {Level} from "./Level.sol";
 
-
 contract Ethernaut is Ownable {
     // Errors
     error Ethernaut__LevelNotRegistered();
@@ -26,7 +25,7 @@ contract Ethernaut is Ownable {
     event LevelInstanceCreated(address indexed player, address instance);
     event LevelCompleted(address indexed player, Level level);
 
-    constructor() Ownable(msg.sender) {} 
+    constructor() Ownable(msg.sender) {}
 
     function registerLevel(Level _level) public onlyOwner {
         registeredLevels[address(_level)] = true;
