@@ -41,14 +41,14 @@ contract Ethernaut is Ownable {
     }
 
     function submitLevelInstance(address payable _instance) public returns (bool) {
-        InstanceData memory instance = instances[_instance];
-        if (instance.player != msg.sender) revert Ethernaut__WrongInstanceForPlayer();
-        if (instance.isCompleted) revert Ethernaut__LevelAlreadyCompleted();
+        InstanceData memory instanceData = instances[_instance];
+        if (instanceData.player != msg.sender) revert Ethernaut__WrongInstanceForPlayer();
+        if (instanceData.isCompleted) revert Ethernaut__LevelAlreadyCompleted();
 
-        if (instance.level.validateInstance(_instance, msg.sender)) {
-            instance.isCompleted = true;
+        if (instanceData.level.validateInstance(_instance, msg.sender)) {
+            instanceData.isCompleted = true;
 
-            emit LevelCompleted(msg.sender, instance.level);
+            emit LevelCompleted(msg.sender, instanceData.level);
             return true;
         }
         return false;
