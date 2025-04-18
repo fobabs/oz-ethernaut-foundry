@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import {Test} from "forge-std/Test.sol";
+import {Test, console2} from "forge-std/Test.sol";
 import {Ethernaut} from "../src/Ethernaut.sol";
 import {FallbackFactory} from "../src/Fallback/FallbackFactory.sol";
 import {Fallback} from "../src/Fallback/Fallback.sol";
@@ -39,10 +39,12 @@ contract FallbackTest is Test {
         assertEq(ethernautFallback.owner(), PLAYER);
 
         // Withdraw all ETH
-        emit log_named_uint("Fallback contract balance before withdrawal", address(ethernautFallback).balance);
+        // emit log_named_uint("Fallback contract balance before withdrawal", address(ethernautFallback).balance);
+        console2.log("Fallback contract balance before withdrawal:", address(ethernautFallback).balance);
         ethernautFallback.withdraw();
         uint256 newBalance = address(ethernautFallback).balance;
-        emit log_named_uint("Fallback contract balance after withdrawal", newBalance);
+        // emit log_named_uint("Fallback contract balance after withdrawal", newBalance);
+        console2.log("Fallback contract balance after withdrawal:", newBalance);
         assertEq(newBalance, 0);
 
         //////////////////////*/
