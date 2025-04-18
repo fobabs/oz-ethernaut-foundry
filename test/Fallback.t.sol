@@ -8,13 +8,13 @@ import {Fallback} from "../src/Fallback/Fallback.sol";
 
 contract FallbackTest is Test {
     Ethernaut public ethernaut;
-    address public PLAYER = makeAddr("player");
-    uint256 public PLAYER_STARTING_BALANCE = 1 ether;
-    uint256 public AMOUNT_TO_SEND = 100 wei;
+    address public player = makeAddr("player");
+    uint256 public constant PLAYER_STARTING_BALANCE = 1 ether;
+    uint256 public constant AMOUNT_TO_SEND = 100 wei;
 
     function setUp() public {
         ethernaut = new Ethernaut();
-        vm.deal(PLAYER, PLAYER_STARTING_BALANCE);
+        vm.deal(player, PLAYER_STARTING_BALANCE);
     }
 
     function testFallbackHack() public {
@@ -23,7 +23,7 @@ contract FallbackTest is Test {
         ////////////////////*/
         FallbackFactory factory = new FallbackFactory();
         ethernaut.registerLevel(factory);
-        vm.startPrank(PLAYER);
+        vm.startPrank(player);
         address levelAddress = ethernaut.createLevelInstance(factory);
         Fallback ethernautFallback = Fallback(payable(levelAddress));
 
@@ -36,7 +36,7 @@ contract FallbackTest is Test {
         // Send ETH to trigger fallback and become the new onwer
         (bool success,) = payable(address(ethernautFallback)).call{value: AMOUNT_TO_SEND}("");
         assertTrue(success);
-        assertEq(ethernautFallback.owner(), PLAYER);
+        assertEq(ethernautFallback.owner(), player);
 
         // Withdraw all ETH
         // emit log_named_uint("Fallback contract balance before withdrawal", address(ethernautFallback).balance);
