@@ -6,7 +6,6 @@ import {Ethernaut} from "../src/Ethernaut.sol";
 import {Fallout} from "../src/Fallout/Fallout.sol";
 import {FalloutFactory} from "../src/Fallout/FalloutFactory.sol";
 
-
 contract FalloutTest is Test {
     Ethernaut public ethernaut;
     address public player = makeAddr("player");

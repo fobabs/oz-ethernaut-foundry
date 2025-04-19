@@ -4,9 +4,8 @@ pragma solidity ^0.8.26;
 import {Level} from "../Level.sol";
 import {Fallout} from "./Fallout.sol";
 
-
 contract FalloutFactory is Level {
-    function createInstance(address /*_player*/) public payable override returns(address) {
+    function createInstance(address /*_player*/ ) public payable override returns (address) {
         Fallout instance = new Fallout();
         return address(instance);
     }
