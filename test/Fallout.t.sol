@@ -1,21 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-import {Test, console2} from "forge-std/Test.sol";
-import {Ethernaut} from "../src/Ethernaut.sol";
+import {BaseTest} from "./BaseTest.t.sol";
+import {console2} from "forge-std/Test.sol";
 import {Fallout} from "../src/Fallout/Fallout.sol";
 import {FalloutFactory} from "../src/Fallout/FalloutFactory.sol";
 
-contract FalloutTest is Test {
-    Ethernaut public ethernaut;
-    address public player = makeAddr("player");
-    uint256 public constant PLAYER_STARTING_BALANCE = 5 ether;
+contract FalloutTest is BaseTest {
     uint256 public constant AMOUNT_TO_SEND = 1 wei;
-
-    function setUp() public {
-        ethernaut = new Ethernaut();
-        vm.deal(player, PLAYER_STARTING_BALANCE);
-    }
 
     function testFalloutHack() public {
         ////////////////////*/
