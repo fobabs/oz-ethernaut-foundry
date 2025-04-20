@@ -6,7 +6,6 @@ import {CoinFlip} from "../src/CoinFlip/CoinFlip.sol";
 import {CoinFlipFactory} from "../src/CoinFlip/CoinFlipFactory.sol";
 import {CoinFlipAttacker} from "../src/CoinFlip/CoinFlipAttacker.sol";
 
-
 contract CoinFlipTest is BaseTest {
     function testCoinFlipHack() public {
         ////////////////////*/
