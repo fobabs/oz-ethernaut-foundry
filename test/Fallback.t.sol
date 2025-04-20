@@ -42,7 +42,7 @@ contract FallbackTest is BaseTest {
         //////////////////////*/
         //  Level Submission
         //////////////////////*/
-        bool levelCompleted = ethernaut.submitLevelInstance(payable(address(levelAddress)));
+        bool levelCompleted = ethernaut.submitLevelInstance(payable(levelAddress));
         vm.stopPrank();
         assertTrue(levelCompleted);
     }
