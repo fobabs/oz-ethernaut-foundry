@@ -6,8 +6,8 @@ import {CoinFlip} from "./CoinFlip.sol";
 
 contract CoinFlipFactory is Level {
     function createInstance(address /*_player*/ ) public payable override returns (address) {
-        CoinFlip coinFlip = new CoinFlip();
-        return address(coinFlip);
+        CoinFlip instance = new CoinFlip();
+        return address(instance);
     }
 
     function validateInstance(address payable _instance, address /*_player*/ ) public view override returns (bool) {
