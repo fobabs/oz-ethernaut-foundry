@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.26;
 
-
 contract Token {
     mapping(address => uint256) balances;
     uint256 public totalSupply;
 
-    constructor(uint256 _initialSupply) { // Remove unnecessary visibility modifier
+    constructor(uint256 _initialSupply) {
+        // Remove unnecessary visibility modifier
         balances[msg.sender] = totalSupply = _initialSupply;
     }
 

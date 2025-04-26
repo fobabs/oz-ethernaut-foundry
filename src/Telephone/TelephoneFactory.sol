@@ -4,9 +4,8 @@ pragma solidity ^0.8.26;
 import {Level} from "../Level.sol";
 import {Telephone} from "./Telephone.sol";
 
-
 contract TelephoneFactory is Level {
-    function createInstance(address /*_player*/) public payable override returns (address) {
+    function createInstance(address /*_player*/ ) public payable override returns (address) {
         Telephone telephone = new Telephone();
         return address(telephone);
     }

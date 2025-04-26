@@ -6,7 +6,6 @@ import {console2} from "forge-std/console2.sol";
 import {TokenFactory} from "../src/Token/TokenFactory.sol";
 import {Token} from "../src/Token/Token.sol";
 
-
 contract TokenTest is BaseTest {
     address public player2 = makeAddr("player2");
 

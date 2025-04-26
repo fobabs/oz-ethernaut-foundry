@@ -6,7 +6,6 @@ import {TelephoneFactory} from "../src/Telephone/TelephoneFactory.sol";
 import {Telephone} from "../src/Telephone/Telephone.sol";
 import {TelephoneAttacker} from "../src/Telephone/TelephoneAttacker.sol";
 
-
 contract TelephoneTest is BaseTest {
     function testTelephoneHack() public {
         ////////////////////*/
