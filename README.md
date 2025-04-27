@@ -1,66 +1,80 @@
-## Foundry
+# OZ Ethernaut Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Solve OpenZeppelin's [Ethernaut](https://ethernaut.openzeppelin.com/) challenges using [Foundry](https://book.getfoundry.sh/).  
+This project provides structured smart contract solutions with automated tests for every level.
 
-Foundry consists of:
+## Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- Smart contract solutions for each Ethernaut level
+- Automated tests for every solution
+- Organized and easy-to-follow project structure
+- Built entirely with Foundry tools
 
-## Documentation
+## Getting Started
 
-https://book.getfoundry.sh/
+Follow these steps to set up the project on your local machine.
 
-## Usage
+### Prerequisites
 
-### Build
+Install the following:
 
-```shell
-$ forge build
+- [Foundry](https://book.getfoundry.sh/getting-started/installation)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/fobabs/oz-ethernaut-foundry.git
+cd oz-ethernaut-foundry
+forge install
 ```
 
-### Test
+### Running Tests
 
-```shell
-$ forge test
+Run all tests with:
+
+```bash
+forge test
 ```
 
-### Format
+You can also run tests for a specific level by targeting the test file:
 
-```shell
-$ forge fmt
+```bash
+forge test --match-path test/LEVEL_NAME.t.sol
 ```
 
-### Gas Snapshots
+Replace `LEVEL_NAME` with the actual level test filename.
 
-```shell
-$ forge snapshot
+## Project Structure
+
+```
+oz-ethernaut-foundry/
+│
+├── src/            # Solution contracts
+│
+├── test/           # Test files for each level
+│
+├── foundry.toml    # Foundry configuration
+│
+└── README.md       # Project documentation
 ```
 
-### Anvil
+Each level has a solution in `src/` and a matching test in `test/`.
 
-```shell
-$ anvil
-```
+## Contributing
 
-### Deploy
+Contributions are welcome.  
+You can create issues for bugs or missing levels and open pull requests with improvements.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
 
-### Cast
+Please follow clean coding practices and write tests for any new levels or improvements.
 
-```shell
-$ cast <subcommand>
-```
+## License
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This project is licensed under the MIT License.
