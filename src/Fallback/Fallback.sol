@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.26;
+pragma solidity ^0.8.4;
 
 /// @notice This is the Fallback contract as appeared in Ethernaut level 1
 contract Fallback {

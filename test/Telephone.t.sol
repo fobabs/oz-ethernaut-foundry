@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.26;
+pragma solidity ^0.8.4;
 
 import {BaseTest} from "./BaseTest.t.sol";
 import {TelephoneFactory} from "../src/Telephone/TelephoneFactory.sol";
