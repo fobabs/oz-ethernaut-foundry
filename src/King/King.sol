@@ -7,7 +7,7 @@ contract King {
     address public owner;
 
     constructor() payable {
-        owner = payable(msg.sender);
+        owner = msg.sender;
         king = msg.sender;
         prize = msg.value;
     }
