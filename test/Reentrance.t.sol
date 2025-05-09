@@ -2,9 +2,9 @@
 pragma solidity ^0.8.4;
 
 import {BaseTest} from "./BaseTest.t.sol";
-import {ReentranceFactory} from "../src/Reentrance/ReentranceFactory.sol";
-import {Reentrance} from "../src/Reentrance/Reentrance.sol";
-import {ReentranceAttacker} from "../src/Reentrance/ReentranceAttacker.sol";
+import {ReentranceFactory} from "../src/Reentrancy/ReentranceFactory.sol";
+import {Reentrance} from "../src/Reentrancy/Reentrance.sol";
+import {ReentranceAttacker} from "../src/Reentrancy/ReentranceAttacker.sol";
 
 contract ReentranceTest is BaseTest {
     function testReentranceHack() public {
