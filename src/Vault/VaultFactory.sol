@@ -5,7 +5,7 @@ import {Level} from "../Level.sol";
 import {Vault} from "./Vault.sol";
 
 contract VaultFactory is Level {
-    function createInstance(address /* Player */ ) public payable override returns (address) {
+    function createInstance(address /* _player */ ) public payable override returns (address) {
         Vault instance = new Vault(keccak256("password"));
         return address(instance);
     }
