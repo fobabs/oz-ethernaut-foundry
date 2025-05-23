@@ -20,13 +20,14 @@ contract GatekeeperOneTest is BaseTest {
         ethernaut.registerLevel(factory);
         vm.startPrank(tx.origin);
         address levelAddress = ethernaut.createLevelInstance(factory);
-        // GatekeeperOne ethernautGatekeeperOne = GatekeeperOne(payable(levelAddress));
+        GatekeeperOne ethernautGatekeeperOne = GatekeeperOne(payable(levelAddress));
 
         ////////////////////*/
         //   Level Attack
         ////////////////////*/
         GatekeeperOneAttacker attacker = new GatekeeperOneAttacker(levelAddress);
         attacker.attack();
+        assertEq(ethernautGatekeeperOne.entrant(), tx.origin);
 
         //////////////////////*/
         //  Level Submission
